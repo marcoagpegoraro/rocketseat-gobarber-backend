@@ -11,4 +11,5 @@ npm add pg pg-hstore
 npx sequelize migration:create --name=create-user
 npx sequelize db:migrate
 
-npm add bcryptjs
+npm add bcryptjs // hash senha
+npm add jsonwebtoken
