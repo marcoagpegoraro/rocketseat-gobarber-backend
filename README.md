@@ -13,3 +13,5 @@ npx sequelize db:migrate
 
 npm add bcryptjs // hash senha
 npm add jsonwebtoken
+
+npm add yup
