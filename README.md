@@ -1,5 +1,7 @@
 # rocketseat-gobarber-backend
 
+# Parte 1
+
 npm add express
 npm add nodemon sucrase -D
   criar arquivo nodemon.json especificando que é pra rodar com o sucrase,
@@ -15,3 +17,7 @@ npm add bcryptjs // hash senha
 npm add jsonwebtoken
 
 npm add yup
+
+# Parte 2
+
+npm add multer
