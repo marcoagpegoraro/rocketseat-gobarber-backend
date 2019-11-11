@@ -11,12 +11,20 @@ class ScheduleController {
       return res.status(401).json({ error: 'User is not a provider' })
 
     const { date } = req.query
-
+    const parsedDate = parseISO(date);
+    
     const appointments = await Appointment.findAll({
-      where:{}
-    })
+      where: {
+        provider_id: req.userId,
+        canceled_at: null,
+        date: {
+          [Op.between]: [startOfDay(parsedDate), endOfDay(parsedDate)],
+        },
+      },
+      order: ['date'],
+    });
+    return res.json(appointments);
 
-    return res.json({ date });
   }
 }
 
