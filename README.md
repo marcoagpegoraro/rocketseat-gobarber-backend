@@ -21,3 +21,5 @@ npm add yup
 # Parte 2
 
 npm add multer
+npx sequelize migration:create --name=create-appointment
+npm add date-fns@next
