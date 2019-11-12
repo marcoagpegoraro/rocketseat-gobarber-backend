@@ -1,8 +1,11 @@
 import Appointment from '../models/Appointment'
 import { startOfHour, parseISO, isBefore, format } from 'date-fns'
+import { pt } from 'date-fns/locale'
 import * as Yup from 'yup'
 import User from '../models/User'
 import File from '../models/File'
+import Notification from '../schemas/Notification'
+
 
 class AppointmentController {
 
@@ -46,6 +49,11 @@ class AppointmentController {
       return res.status(400).json({ error: 'Validation fails' })
 
     const { provider_id, date } = req.body
+
+    //check if logged user is the same as the provider
+    if(req.userId === provider_id){
+      return res.status(400).json({ error: 'You cannot make an appointment with yourself' })
+    }
 
     //check if provider_id is a provider
     const checkIsProvider = await User.findOne({
