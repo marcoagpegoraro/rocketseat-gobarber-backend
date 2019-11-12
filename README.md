@@ -23,3 +23,5 @@ npm add yup
 npm add multer
 npx sequelize migration:create --name=create-appointment
 npm add date-fns@next
+docker run --name mongobarber -p 27017:27017 -d -t mongo
+npm add mongoose
