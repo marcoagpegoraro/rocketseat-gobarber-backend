@@ -13,15 +13,15 @@ class Mail {
             host
             , port
             , secure
-            , auth: auth.user ? auth: null
-            
+            , auth: auth.user ? auth : null
+
         })
 
         this.configureTemplates();
     }
 
-    configureTemplates(){
-        const viewPath = resolve(__dirname, '..', 'app', 'views','emails')
+    configureTemplates() {
+        const viewPath = resolve(__dirname, '..', 'app', 'views', 'emails')
 
         this.transporter.use('compile', nodemailerhbs({
             viewEngine: exphbs.create({
@@ -35,7 +35,7 @@ class Mail {
         }))
     }
 
-    sendMail(message){
+    sendMail(message) {
         return this.transporter.sendMail({
             ...mailConfig.default, // tudo q tem no mailconfig.default
             ...message // tudo que tem no message
