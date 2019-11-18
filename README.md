@@ -28,3 +28,6 @@ npm add mongoose
 npm add nodemailer
 
 npm add express-handlebars nodemailer-express-handlebars
+
+docker run --name regisbarber -p 6379:6379 -d -t redis:alpine
+npm add bee-queue
