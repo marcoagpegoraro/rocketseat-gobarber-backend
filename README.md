@@ -31,3 +31,6 @@ npm add express-handlebars nodemailer-express-handlebars
 
 docker run --name regisbarber -p 6379:6379 -d -t redis:alpine  
 npm add bee-queue  
+npm install @sentry/node@5.9.0  
+npm add express-async-errors  
+npm add youch  
